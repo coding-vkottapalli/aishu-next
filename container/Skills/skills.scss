@@ -1,0 +1,90 @@
+#skills {
+	background-image: url('/assets/unsplash-about2.jpg');
+	position: relative;
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: repeat;
+}
+.app__skills {
+	padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.skills__container {
+	margin-top: 4rem;
+	padding: 5px;
+
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	gap: 50px;
+
+	.skills__item {
+		width: 320px;
+		height: 20rem;
+		padding: 10px;
+		border-radius: 30px;
+
+		display: grid;
+		grid: 20px auto / 100px auto;
+		// grid-template-rows: repeat(2, 1fr);
+		// grid-template-columns: 1fr, 1.5fr;
+		gap: 10px;
+
+		background: transparent;
+		backdrop-filter: blur(8px);
+		box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.2);
+
+		transition: all 0.3s linear;
+
+		.skills__item-heading {
+			margin-top: 1rem;
+			font-size: 0.8rem;
+			padding-left: 1rem;
+			// padding: 0 15px;
+			// align-self: flex-end;
+		}
+		.skills__item-rating {
+			margin-top: 2rem;
+			margin-left: 1rem;
+			margin-right: 1rem;
+			align-self: center;
+			background: linear-gradient(
+				to right,
+				rgba(233, 233, 155, 0.616) 30%,
+				rgba(140, 230, 140, 0.671) 80%,
+				rgba(223, 124, 124, 0.664)
+			);
+			height: 10px;
+			border-radius: 10px;
+		}
+		.skills__item-logo {
+			// grid-row: 1 / span 4;
+			align-self: center;
+
+			img {
+				width: 100%;
+			}
+		}
+		.skills__item-description {
+			// grid-column: 2 / 3;
+			margin-top: 2rem;
+			border-radius: 20px;
+			padding: 5px 15px;
+
+			p {
+				font-size: 1rem;
+			}
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	@media screen and (max-width: 900px) {
+		flex-direction: column;
+	}
+}

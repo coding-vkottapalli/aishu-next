@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#contact {
+	background-image: url('/assets/contact-background1.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: repeat;
+
+	// background-color: rgba(138, 133, 133, 0.548);
+	position: relative;
+}
+
+.contact-container {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	margin-top: 2.5rem;
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	h2 {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-decoration: underline orange;
+		text-underline-offset: 8px;
+		margin: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	label {
+		font-size: 20px;
+		margin: 0.5rem;
+	}
+
+	input {
+		margin: 0.5rem;
+		height: 30px;
+		padding: 1.5rem 1rem;
+		font-size: 1rem;
+		font-weight: 600;
+		outline: none;
+		&:focus {
+			outline-style: solid;
+			outline-color: orange;
+			outline-width: 1px;
+		}
+	}
+
+	textarea {
+		margin: 0.5rem;
+		padding: 1rem;
+		min-height: 100px;
+		font-size: 1rem;
+		font-weight: 600;
+		outline: none;
+		&:focus {
+			outline-style: solid;
+			outline-color: orange;
+			outline-width: 1px;
+		}
+	}
+
+	.send-button {
+		font-size: 1.5rem;
+		font-weight: 300;
+		letter-spacing: 3px;
+		color: black;
+
+		padding: 5px;
+		margin-top: 20px;
+
+		height: 3rem;
+		align-self: center;
+		width: 10rem;
+
+		backdrop-filter: blur(10px);
+		box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+		outline: none;
+	}
+	.send-button:active {
+		transform: translate(2px, 3px);
+	}
+
+	.success-text {
+		font-size: 1.2rem;
+
+		margin-top: 0.7rem;
+		text-align: center;
+		visibility: visible;
+	}
+	.success-hidden {
+		visibility: hidden;
+	}
+
+	@media screen and (max-width: 900px) {
+		width: 370px;
+		margin: 5rem 4rem;
+	}
+}
