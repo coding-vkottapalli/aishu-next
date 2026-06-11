@@ -26,7 +26,19 @@ const Navbar = () => {
 				{['home', 'about', 'work', 'skills', 'contact'].map((item) => (
 					<li className='app__flex ' key={`link-${item}`}>
 						<div />
-						<a href={`#${item}`}>{item}</a>
+						<a href={`#${item}`}>
+							<span
+								style={{
+									fontFamily: "'Roboto', sans-serif",
+									fontWeight: 800,
+									letterSpacing: '1px',
+									textTransform: 'uppercase',
+									fontSize: '1.1rem',
+								}}
+							>
+								{item}
+							</span>
+						</a>
 					</li>
 				))}
 			</ul>
