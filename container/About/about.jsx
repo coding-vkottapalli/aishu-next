@@ -23,18 +23,54 @@ const About = () => {
 					<span>"</span>Art is not what you <span>see,</span> <br />
 					but what you make others <span>see."</span>
 				</h2>
-				<div className='app__about-me'>
-					<p>
-						An innovative and resourceful 3D Artist with 4+ years experience in
-						creating and delivering world class 3D models. Experienced in
-						creating AR and VR ready models.
-						<br /> Self-motivated and a hard working professional accustomed to
-						performing well under pressure and completing all projects within
-						given schedule.
-						<br /> On recently moving to Canada, I am ready and excited to
-						explore interesting career opportunities in 3D Art.
-					</p>
+
+				{/* ONLY THIS CARD ELEMENT HAS BEEN MODIFIED */}
+				<div className='app__about-me-card'>
+					<div className='about-me__bio'>
+						<p>
+							I’m Aishwarya Pearala, a 3D Artist based in Canada with 8+ years
+							of experience crafting high-quality assets for film, AR/VR, and
+							real-time interactive media.
+						</p>
+						<p>
+							My background spans global projects, including modeling
+							environments for The Croods: A New Age (DreamWorks) and building
+							hard-surface assets at Amazon. I handle everything from initial
+							concept to final render, always focusing on clean topology and
+							production-ready assets that make integration easy for other
+							departments.
+						</p>
+						<p>
+							I'm currently looking for remote roles across North America or
+							hybrid positions in the GTA.
+						</p>
+					</div>
+
+					<div className='about-me__skills-summary'>
+						<h3>Core Toolkit</h3>
+						<ul>
+							<li>
+								<strong>Modeling & Sculpting:</strong> Maya, Z-Brush
+							</li>
+							<li>
+								<strong>Texturing & Rendering:</strong> Substance Painter
+							</li>
+							<li>
+								<strong>Real-Time & Integration:</strong> Unreal Engine
+							</li>
+						</ul>
+						<br />
+						<h3>Languages</h3>
+						<ul>
+							<li>English</li>
+							<li>Hindi</li>
+							<li>Telugu</li>
+						</ul>
+					</div>
 				</div>
+				<h2 className='head-text' style={{ marginTop: 35, fontSize: 35 }}>
+					Proffessional Skills
+				</h2>
 				<div className='app__profiles'>
 					{abouts.map((about, index) => (
 						<motion.div
