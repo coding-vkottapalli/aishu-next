@@ -63,7 +63,11 @@ const Work = () => {
 								onClick={() => setActiveWork(work)}
 							>
 								<div className='work__card-media'>
-									<img src={work.imgURL} alt={work.title} loading='lazy' />
+									<img
+										src={work.imgURL}
+										alt={`${work.title} — ${work.tags[0]} 3D art by Aishwarya Pearala`}
+										loading='lazy'
+									/>
 									<div className='work__card-overlay'>
 										<div className='work__card-actions'>
 											<span className='work__action'>

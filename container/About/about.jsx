@@ -79,6 +79,7 @@ const About = () => {
 					</div>
 					<blockquote className='about__quote'>
 						“Art is not what you see, but what you make others see.”
+						<cite>— Edgar Degas</cite>
 					</blockquote>
 				</motion.div>
 			</div>

@@ -17,9 +17,9 @@
 	--border: #262a34; /* hairline borders */
 	--border-strong: #363b47;
 
-	--text: #f3f4f6; /* primary text */
-	--text-muted: #a1a7b3; /* secondary text */
-	--text-faint: #6b7280; /* tertiary / labels */
+	--text: #f5f6f8; /* primary text */
+	--text-muted: #c4c9d4; /* secondary text — lightened for readability on dark */
+	--text-faint: #9aa1b0; /* tertiary / labels — lightened to pass contrast */
 
 	/* Accent — warm amber/copper reads premium on dark, evokes sculpting/clay */
 	--accent: #e8a13a;

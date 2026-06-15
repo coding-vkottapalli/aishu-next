@@ -66,7 +66,7 @@ const WorkModal = ({ work, onClose }) => {
 							<img
 								key={index}
 								src={images[index]}
-								alt={`${work.title} — view ${index + 1}`}
+								alt={`${work.title} — ${work.tags[0]} 3D art by Aishwarya Pearala (view ${index + 1})`}
 								className='workmodal__img'
 							/>
 							{images.length > 1 && (

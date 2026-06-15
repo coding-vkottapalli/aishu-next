@@ -84,7 +84,7 @@ const Header = () => {
 				>
 					<motion.img
 						src={images.chameleon}
-						alt='Stylized 3D chameleon character by Aishwarya Pearala'
+						alt='Stylized 3D chameleon character render by Aishwarya Pearala, Senior 3D Environment & Asset Artist in Toronto'
 						className='hero__subject'
 						animate={{ y: [0, -18, 0] }}
 						transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}

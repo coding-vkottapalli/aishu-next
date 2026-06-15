@@ -95,6 +95,16 @@
 		line-height: 1.5;
 		border-left: 2px solid var(--accent);
 		padding-left: 1rem;
+
+		cite {
+			display: block;
+			margin-top: 0.6rem;
+			font-style: normal;
+			font-size: 0.85rem;
+			font-weight: 600;
+			letter-spacing: 0.04em;
+			color: var(--text-faint);
+		}
 	}
 
 	/* What I do — disciplines as tags */
