@@ -67,6 +67,29 @@ const About = () => {
 							<li>Telugu</li>
 						</ul>
 					</div>
+
+					<div className='about-me__skills-summary'>
+						<h3>Proffessional Skills</h3>
+						<ul>
+							<li>
+								<strong>Modeling & Sculpting:</strong> Maya, Z-Brush, Blender
+							</li>
+							<li>
+								<strong>Texturing & Rendering:</strong> Substance 3D Painter,
+								Photoshop, Procreate
+							</li>
+							<li>
+								<strong>Real-Time & Integration:</strong> Unreal Engine
+							</li>
+						</ul>
+						<br />
+						<h3>Languages</h3>
+						<ul>
+							<li>English</li>
+							<li>Hindi</li>
+							<li>Telugu</li>
+						</ul>
+					</div>
 				</div>
 				<h2 className='head-text' style={{ marginTop: 35, fontSize: 35 }}>
 					Proffessional Skills
