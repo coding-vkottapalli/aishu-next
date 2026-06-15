@@ -1,103 +1,56 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiArrowDown, FiArrowUpRight } from 'react-icons/fi';
 import { images } from '../../constants';
-import { AppWrap } from '../../wrapper';
 import './header.scss';
 
-const scaleVariants = {
-	whileInView: {
-		scale: [0, 1],
-		opacity: [0, 1],
-		transition: {
-			duration: 1,
-			ease: 'easeInOut',
-		},
-	},
-};
+const pdf = '/assets/resume/resume.pdf';
 
 const Header = () => {
 	return (
-		<div id='home' className='app__header app__flex'>
+		<header id='home' className='intro section'>
 			<motion.div
-				whileInView={{
-					x: [-100, 0],
-					opacity: [0, 1],
-				}}
-				transition={{
-					duration: 0.5,
-				}}
-				className='app__header-info'
+				className='intro__text'
+				initial={{ opacity: 0, y: 16 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6, ease: 'easeOut' }}
 			>
-				<div className='app__header-badge'>
-					<div className='badge-cmp app__flex'>
-						<span> 👋 </span>
-						<div style={{ marginLeft: 20 }}>
-							<p className='p-text'>Hello, I am </p>
-							<h1 className='head-text'>Aishwarya Pearala</h1>
-						</div>
-					</div>
+				<p className='intro__hi'>
+					<span className='intro__wave'>👋</span> Hi, I&apos;m Aishwarya
+				</p>
+				<h1 className='intro__headline'>
+					I&apos;m a 3D Environment &amp; Asset Artist creating game-ready
+					environments, props and characters for film, games and AR/VR.
+				</h1>
+				<p className='intro__sub'>
+					8+ years of experience — including <strong>The Croods: A New Age</strong>{' '}
+					(DreamWorks / Technicolor) and asset work at <strong>Amazon</strong>.
+					Based in Whitby, Ontario · open to GTA hybrid &amp; remote roles.
+				</p>
 
-					<div className='tag-cmp app__flex'>
-						<p className='p-text'>3D Artist </p>
-						<p className='p-text'>2D Artist </p>
-						<p className='p-text'>3D Asset Artist</p>
-						<p className='p-text'>3D Character Artist</p>
-						<p className='p-text'>3D Environment Artist</p>
-					</div>
+				<div className='intro__cta'>
+					<a href='#work' className='btn btn--primary'>
+						See my work <FiArrowDown />
+					</a>
+					<a href={pdf} download='Aishwarya-Pearala-Resume.pdf' className='btn btn--ghost'>
+						Download résumé <FiArrowUpRight />
+					</a>
 				</div>
 			</motion.div>
 
 			<motion.div
-				whileInView={{
-					opacity: [0, 1],
-				}}
-				transition={{
-					duration: 0.5,
-					delayChildren: 0.5,
-				}}
-				className='app__header-img'
+				className='intro__shots'
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 0.8, delay: 0.15 }}
 			>
-				<img src={images.profile} alt='profile_bg' />
-				<motion.img
-					whileInView={{
-						scale: [0, 1],
-					}}
-					transition={{
-						duration: 1,
-						ease: 'easeInOut',
-					}}
-					src={images.circle}
-					alt='profile_circle'
-					className='overlay_circle'
-				/>
+				<img src={images.childhood} alt='Stylized 3D environment by Aishwarya Pearala' className='intro__shot intro__shot--lg' />
+				<img src={images.chameleon} alt='Stylized 3D character by Aishwarya Pearala' className='intro__shot' />
+				<img src={images.fairysHouse} alt='Stylized 3D prop by Aishwarya Pearala' className='intro__shot' />
 			</motion.div>
-
-			<motion.div
-				variant={scaleVariants}
-				whileInView={scaleVariants.whileInView}
-				className='app__header-circles'
-			>
-				{[
-					images.tool01,
-					images.tool02,
-					images.tool03,
-					images.tool04,
-					images.tool05,
-					images.tool06,
-				].map((circle, index) => {
-					return (
-						<div
-							className='circle-cmp app__flex circle-cmp1'
-							key={`circle-${index}`}
-						>
-							<img src={circle} alt='profile_bg' />
-						</div>
-					);
-				})}
-			</motion.div>
-		</div>
+		</header>
 	);
 };
 
-export default AppWrap(Header, 'home');
+export default Header;

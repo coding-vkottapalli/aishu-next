@@ -7,6 +7,7 @@ const images = {
 	about05: '/assets/milad-fakurian-PGdW_bHDbpI-unsplash.jpg',
 
 	// Profile / UI
+	headshot: '/assets/headshot.jpg',
 	profile: '/assets/Portfolio_image.jpg',
 	circle: '/assets/circle.svg',
 	logo: '/assets/aish-logo.png',
