@@ -1,4 +1,5 @@
 export const metadata = {
+	metadataBase: new URL('https://aishwarya-pearala.com'),
 	// Basic
 	title: 'Aishwarya Pearala | Senior 3D Artist | Film, AR/VR & Real-Time',
 	description:

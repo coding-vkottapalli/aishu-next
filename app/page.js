@@ -1,6 +1,7 @@
-import './globals.scss'; // or globals.scss if you rename it
+import './globals.scss';
 import { About, Header, Contact, Skills, Work } from '../container';
 import { Navbar } from '../components';
+import { SideRails } from '../components/sm-navigation';
 
 export default function Home() {
 	return (
@@ -12,13 +13,13 @@ export default function Home() {
 						'@context': 'https://schema.org',
 						'@type': 'Person',
 						name: 'Aishwarya Pearala',
-						jobTitle: 'Senior 3D Artist',
+						jobTitle: 'Senior 3D Environment & Asset Artist',
 						description:
-							'3D Artist with 8+ years of experience in film, AR/VR, and real-time applications.',
+							'Senior 3D Environment & Asset Artist with 8+ years of experience in film, AR/VR, and real-time applications.',
 						url: 'https://aishwarya-pearala.com',
 						sameAs: [
 							'https://www.artstation.com/aishpearala',
-							'https://www.linkedin.com/in/aishwarya-pearala', // ← add real LinkedIn if she has one
+							'https://www.linkedin.com/in/aishwarya-pearala-806358159/',
 						],
 						address: {
 							'@type': 'PostalAddress',
@@ -32,9 +33,9 @@ export default function Home() {
 							'Substance Painter',
 							'Unreal Engine',
 							'3D Modeling',
+							'Environment Art',
 							'AR/VR',
 							'Film Production',
-							'Environment Art',
 							'Hard Surface Modeling',
 						],
 					}),
@@ -42,12 +43,14 @@ export default function Home() {
 			/>
 			<div className='app'>
 				<Navbar />
-				<Header />
-				<About />
-				{/* <Noteworthy /> */}
-				<Work />
-				<Skills />
-				<Contact />
+				<SideRails />
+				<main>
+					<Header />
+					<Work />
+					<About />
+					<Skills />
+					<Contact />
+				</main>
 			</div>
 		</>
 	);

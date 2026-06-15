@@ -1,31 +1,36 @@
 import { images } from '../../constants';
 export const abouts = [
 	{
-		title: '3D Modeling',
+		title: 'Modeling',
+		summary: 'High- and low-poly, game-ready assets — organic & hard-surface.',
 		description:
 			'Specialized in creating high and low poly 3D Environments, realistic assets, game ready assets, weapons, characters, AR and VR ready models, Organic and Inorganic models in Maya and Blender.',
 		imgURL: images.about01,
 	},
 	{
-		title: '3D Texturing',
+		title: 'Texturing',
+		summary: 'Clean UVs and photoreal or stylized texture work.',
 		description:
 			'Strong skills in Unwrap and UV Layout for 3D Models. Creating Photorealistic and Stylized textures for assets, characters and 3D Environments using Substance Painter, Procreate and Photoshop.',
 		imgURL: images.about02,
 	},
 	{
-		title: '3D Sculpting',
+		title: 'Sculpting',
+		summary: 'Characters, props & environments built from scratch in ZBrush.',
 		description:
 			'Experienced in building a 3D model from scratch for Realistic and Stylized characters, realistic and stylized assets, photorealistic 3D environments in Z-brush, Blender and Maya.',
 		imgURL: images.about03,
 	},
 	{
-		title: '3D Lighting',
+		title: 'Lighting',
+		summary: 'Product, character & environment lighting that sells the shot.',
 		description:
 			'Have the knowledge to create lighting set-up for 3D products lighting for advertising, 3D character and assets lighting to showcase 3D works and 3D environment lighting.',
 		imgURL: images.about04,
 	},
 	{
-		title: '3D Rendering',
+		title: 'Rendering',
+		summary: 'Photoreal output with V-Ray, Arnold & KeyShot.',
 		description:
 			'Proficient in good usage of V-ray, Arnold and Key Shot rendering for Photorealistic assets, characters, and environments. Good expertize in combining 3D visualization skills with a detailed organized workflow.',
 		imgURL: images.about05,

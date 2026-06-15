@@ -1,54 +1,51 @@
 'use client';
-import React, { useState, useEffect, Fragment } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { images } from '../../constants';
-import { AppWrap, MotionWrap } from '../../wrapper';
 import { skillsData } from './skills-data';
-
 import './skills.scss';
 
 const Skills = () => {
 	return (
-		<Fragment>
-			<div className='app__skills'>
-				<motion.h2
-					whileInView={{ opacity: [0, 1] }}
-					whileHover={{ scale: 1.1 }}
-					transition={{ duration: 1, type: 'tween' }}
-					className='head-text head-text-block'
-				>
-					Skills<span> & </span>Tools
-				</motion.h2>
-
-				<div className='skills__container'>
-					{skillsData.map((item, i) => (
-						<div key={item.heading + i} className='skills__item'>
-							<div className='skills__item-heading'>
-								<h2>{item.heading}</h2>
-							</div>
-							<div className='skills__item-rating'></div>
-							<div className='skills__item-logo'>
-								<img src={item.imgURL} alt='' />
-							</div>
-							<div className='skills__item-description'>
-								<div className='skills__item-description-p'>
-									{item.description.map((skill, i) => (
-										<ul key={i}>
-											<li>{skill}</li>
-										</ul>
-									))}
-								</div>
-							</div>
-						</div>
-					))}
-				</div>
+		<section id='skills' className='section skills'>
+			<div className='skills__head'>
+				<span className='eyebrow'>Skills &amp; Tools</span>
+				<h2 className='section-title'>
+					My <span>creative pipeline</span>
+				</h2>
+				<p className='section-intro'>
+					An end-to-end toolset covering modeling, sculpting, texturing,
+					lighting and real-time integration — whatever the project needs.
+				</p>
 			</div>
-		</Fragment>
+
+			<div className='skills__grid'>
+				{skillsData.map((item, i) => (
+					<motion.div
+						key={item.heading}
+						className='skills__card'
+						initial={{ opacity: 0, y: 24 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ duration: 0.5, delay: i * 0.05 }}
+					>
+						<div className='skills__card-head'>
+							<div className='skills__card-logo'>
+								<img src={item.imgURL} alt={`${item.heading} logo`} />
+							</div>
+							<h3>{item.heading}</h3>
+						</div>
+						<div className='skills__card-tags'>
+							{item.description.map((skill, idx) => (
+								<span key={idx} className='skills__tag'>
+									{skill}
+								</span>
+							))}
+						</div>
+					</motion.div>
+				))}
+			</div>
+		</section>
 	);
 };
 
-export default AppWrap(
-	MotionWrap(Skills, 'app__skills'),
-	'skills',
-	'app__primarybg',
-);
+export default Skills;

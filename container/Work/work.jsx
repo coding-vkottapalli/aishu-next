@@ -1,165 +1,99 @@
 'use client';
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useMemo } from 'react';
 import { AiFillEye } from 'react-icons/ai';
 import { SiSketchfab } from 'react-icons/si';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import WorkModal from './work-modal';
-
-import { AppWrap, MotionWrap } from '../../wrapper';
 import './work.scss';
 import { categories, workData } from './work-data';
-import Noteworthy from '../Noteworthy/noteworthy';
 
 const Work = () => {
-	const [works, setWorks] = useState([]);
-	const [filterWork, setFilterWork] = useState([]);
 	const [activeFilter, setActiveFilter] = useState('All');
-	const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-	const [modalOpen, setModalOpen] = useState(false);
+	const [activeWork, setActiveWork] = useState(null);
 
-	const [subImagesArray, setsubImagesArray] = useState([]);
-	const [subtagArray, setSubTagArray] = useState([]);
-
-	useEffect(() => {
-		setWorks(workData);
-		setFilterWork(workData);
-	}, []);
-
-	const modalHandler = (subImages, subTags) => {
-		setModalOpen(!modalOpen);
-		setsubImagesArray(subImages);
-		setSubTagArray(subTags);
-	};
-
-	const handleWorkFilter = (item) => {
-		setActiveFilter(item);
-		setAnimateCard([{ y: 100, opacity: 0 }]);
-
-		setTimeout(() => {
-			setAnimateCard([{ y: 0, opacity: 1 }]);
-
-			if (item === 'All') {
-				setFilterWork(works);
-			} else {
-				setFilterWork(works.filter((work) => work.tags.includes(item)));
-			}
-		}, 500);
-	};
+	const filtered = useMemo(() => {
+		if (activeFilter === 'All') return workData;
+		return workData.filter((w) => w.tags.includes(activeFilter));
+	}, [activeFilter]);
 
 	return (
-		<>
-			{modalOpen && (
-				<WorkModal
-					modalHandler={modalHandler}
-					subImagesArray={subImagesArray}
-					subTagArray={subtagArray}
-				/>
-			)}
-			{/* <h2 className="head-text head-text__p">
-				My Creative <span>Portfolio</span> Section
-			</h2> */}
-			<Noteworthy />
-			<div className='app__work-filter'>
-				{categories.map((item, index) => (
-					<div
-						key={index}
-						onClick={() => handleWorkFilter(item)}
-						className={`app__work-filter-item app__flex p-text ${
-							activeFilter === item ? 'item-active' : ''
+		<section id='work' className='section work'>
+			<div className='work__head'>
+				<div>
+					<span className='eyebrow'>Selected Work</span>
+					<h2 className='section-title'>
+						Portfolio <span>&amp; Projects</span>
+					</h2>
+					<p className='section-intro'>
+						Stylized characters, realistic props and production-ready AR/VR
+						assets. Click any piece to view breakdowns and spin the interactive
+						3D model.
+					</p>
+				</div>
+			</div>
+
+			<div className='work__filter'>
+				{categories.map((item) => (
+					<button
+						key={item}
+						className={`work__filter-pill ${
+							activeFilter === item ? 'is-active' : ''
 						}`}
+						onClick={() => setActiveFilter(item)}
 					>
 						{item}
-					</div>
+					</button>
 				))}
 			</div>
 
-			<motion.div
-				animate={animateCard}
-				transition={{ duration: 0.5, delayChildren: 0.5 }}
-				className='app__work-portfolio'
-			>
-				{filterWork.map((work, index) => (
-					<Fragment key={index}>
-						<div
-							className={`app__work-item app__flex ${
-								work.tags[0] == '3D Stylized' ? 'app__work-item-resize' : ''
-							}`}
-							onClick={
-								work.tags[0] != '3D Stylized' && !work.tags.includes('No-Eye') ?
-									() => modalHandler(work.subImages, work.tags)
-								:	() => 'Thank you for visiting my Portfolio- Aishwarya'
-							}
-						>
-							<a href={work?.codeLink} target='_blank' rel='noreferrer'>
-								<div className='app__work-img app__flex'>
-									<img
-										src={work.imgURL}
-										alt={work.name}
-										style={{
-											backgroundColor: '#D3D3D3',
-										}}
-									/>
-
-									<motion.div
-										whileHover={{ opacity: [0, 1] }}
-										transition={{
-											duration: 0.25,
-											ease: 'easeInOut',
-											staggerChildren: 0.5,
-										}}
-										className='app__work-hover app__flex'
-									>
-										{work.tags[0] != '3D Stylized' &&
-											!work.tags.includes('No-Eye') && (
-												<motion.div
-													whileInView={{ scale: [0, 1] }}
-													whileHover={{ scale: [1, 0.9] }}
-													transition={{ duration: 0.25 }}
-													className='app__flex'
-													onClick={() =>
-														modalHandler(work.subImages, work.tags)
-													}
-												>
-													<AiFillEye />
-												</motion.div>
+			<motion.div layout className='work__grid'>
+				<AnimatePresence mode='popLayout'>
+					{filtered.map((work) => {
+						const has3D = Boolean(work.codeLink);
+						return (
+							<motion.article
+								layout
+								key={work.title}
+								initial={{ opacity: 0, scale: 0.95 }}
+								animate={{ opacity: 1, scale: 1 }}
+								exit={{ opacity: 0, scale: 0.95 }}
+								transition={{ duration: 0.35 }}
+								className='work__card'
+								onClick={() => setActiveWork(work)}
+							>
+								<div className='work__card-media'>
+									<img src={work.imgURL} alt={work.title} loading='lazy' />
+									<div className='work__card-overlay'>
+										<div className='work__card-actions'>
+											<span className='work__action'>
+												<AiFillEye />
+											</span>
+											{has3D && (
+												<span className='work__action work__action--3d'>
+													<SiSketchfab />
+												</span>
 											)}
-										{work?.codeLink && (
-											<motion.div
-												whileInView={{ scale: [0, 1] }}
-												whileHover={{ scale: [1, 0.9] }}
-												transition={{ duration: 0.25 }}
-												className='app__flex'
-											>
-												<SiSketchfab />
-											</motion.div>
-										)}
-									</motion.div>
-								</div>
-
-								<div className='app__work-content app__flex'>
-									<h4 className='bold-text'>{work.title}</h4>
-									<p className='p-text-description' style={{ marginTop: 10 }}>
-										{work.description}
-									</p>
-									<br />
-									<p className='p-text-description2'>{work?.description2}</p>
-
-									<div className='app__work-tag app__flex'>
-										<p className='p-text'>{work.tags[0]}</p>
+										</div>
 									</div>
 								</div>
-							</a>
-						</div>
-					</Fragment>
-				))}
+								<div className='work__card-body'>
+									<h4>{work.title}</h4>
+									<span className='work__card-tag'>{work.tags[0]}</span>
+								</div>
+							</motion.article>
+						);
+					})}
+				</AnimatePresence>
 			</motion.div>
-		</>
+
+			<AnimatePresence>
+				{activeWork && (
+					<WorkModal work={activeWork} onClose={() => setActiveWork(null)} />
+				)}
+			</AnimatePresence>
+		</section>
 	);
 };
 
-export default AppWrap(
-	MotionWrap(Work, 'app__works'),
-	'work',
-	'app__primarybg',
-);
+export default Work;

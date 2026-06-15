@@ -1,103 +1,104 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiArrowDown, FiDownload } from 'react-icons/fi';
 import { images } from '../../constants';
-import { AppWrap } from '../../wrapper';
 import './header.scss';
 
-const scaleVariants = {
-	whileInView: {
-		scale: [0, 1],
-		opacity: [0, 1],
-		transition: {
-			duration: 1,
-			ease: 'easeInOut',
-		},
-	},
-};
+const pdf = '/assets/resume/resume.pdf';
+
+const credentials = [
+	{ value: '8+', label: 'Years experience' },
+	{ value: 'Croods 2', label: 'DreamWorks / Technicolor' },
+	{ value: 'Amazon', label: 'AR / VR' },
+];
 
 const Header = () => {
 	return (
-		<div id='home' className='app__header app__flex'>
-			<motion.div
-				whileInView={{
-					x: [-100, 0],
-					opacity: [0, 1],
-				}}
-				transition={{
-					duration: 0.5,
-				}}
-				className='app__header-info'
-			>
-				<div className='app__header-badge'>
-					<div className='badge-cmp app__flex'>
-						<span> 👋 </span>
-						<div style={{ marginLeft: 20 }}>
-							<p className='p-text'>Hello, I am </p>
-							<h1 className='head-text'>Aishwarya Pearala</h1>
-						</div>
+		<header id='home' className='hero'>
+			<div className='hero__glow' aria-hidden='true' />
+
+			<div className='hero__inner'>
+				<motion.div
+					className='hero__content'
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.7, ease: 'easeOut' }}
+				>
+					<span className='eyebrow'>
+						Senior 3D Environment &amp; Asset Artist · Whitby, ON
+					</span>
+
+					<h1 className='hero__title'>
+						Aishwarya <span>Pearala</span>
+					</h1>
+
+					<p className='hero__tagline'>
+						I build <strong>game-ready environments, props &amp; stylized
+						assets</strong> for film, games and AR/VR — from first sculpt to
+						final render.
+					</p>
+
+					<div className='hero__roles'>
+						{[
+							'Environment Art',
+							'Prop & Asset',
+							'AR / VR Ready',
+							'Texturing',
+							'Lighting',
+						].map((r) => (
+							<span key={r} className='hero__chip'>
+								{r}
+							</span>
+						))}
 					</div>
 
-					<div className='tag-cmp app__flex'>
-						<p className='p-text'>3D Artist </p>
-						<p className='p-text'>2D Artist </p>
-						<p className='p-text'>3D Asset Artist</p>
-						<p className='p-text'>3D Character Artist</p>
-						<p className='p-text'>3D Environment Artist</p>
-					</div>
-				</div>
-			</motion.div>
-
-			<motion.div
-				whileInView={{
-					opacity: [0, 1],
-				}}
-				transition={{
-					duration: 0.5,
-					delayChildren: 0.5,
-				}}
-				className='app__header-img'
-			>
-				<img src={images.profile} alt='profile_bg' />
-				<motion.img
-					whileInView={{
-						scale: [0, 1],
-					}}
-					transition={{
-						duration: 1,
-						ease: 'easeInOut',
-					}}
-					src={images.circle}
-					alt='profile_circle'
-					className='overlay_circle'
-				/>
-			</motion.div>
-
-			<motion.div
-				variant={scaleVariants}
-				whileInView={scaleVariants.whileInView}
-				className='app__header-circles'
-			>
-				{[
-					images.tool01,
-					images.tool02,
-					images.tool03,
-					images.tool04,
-					images.tool05,
-					images.tool06,
-				].map((circle, index) => {
-					return (
-						<div
-							className='circle-cmp app__flex circle-cmp1'
-							key={`circle-${index}`}
+					<div className='hero__cta'>
+						<a href='#work' className='btn btn--primary'>
+							View Work <FiArrowDown />
+						</a>
+						<a
+							href={pdf}
+							download='Aishwarya-Pearala-Resume.pdf'
+							className='btn btn--ghost'
 						>
-							<img src={circle} alt='profile_bg' />
-						</div>
-					);
-				})}
-			</motion.div>
-		</div>
+							<FiDownload /> Download Resume
+						</a>
+					</div>
+
+					<dl className='hero__stats'>
+						{credentials.map((c) => (
+							<div key={c.label} className='hero__stat'>
+								<dt>{c.value}</dt>
+								<dd>{c.label}</dd>
+							</div>
+						))}
+					</dl>
+				</motion.div>
+
+				<motion.div
+					className='hero__visual'
+					initial={{ opacity: 0, scale: 0.9 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
+				>
+					<motion.img
+						src={images.chameleon}
+						alt='Stylized 3D chameleon character by Aishwarya Pearala'
+						className='hero__subject'
+						animate={{ y: [0, -18, 0] }}
+						transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<div className='hero__visual-ring' aria-hidden='true' />
+				</motion.div>
+			</div>
+
+			<a href='#work' className='hero__scroll' aria-label='Scroll to work'>
+				<span>Scroll</span>
+				<FiArrowDown />
+			</a>
+		</header>
 	);
 };
 
-export default AppWrap(Header, 'home');
+export default Header;
