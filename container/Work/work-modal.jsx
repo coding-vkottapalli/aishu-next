@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { FiX, FiChevronLeft, FiChevronRight, FiExternalLink } from 'react-icons/fi';
 import { SiSketchfab } from 'react-icons/si';
 import './work-modal.scss';
@@ -32,19 +31,12 @@ const WorkModal = ({ work, onClose }) => {
 	}, [lastIndex]);
 
 	return (
-		<motion.div
-			className='workmodal'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
+		<div
+			className='workmodal reveal-fade'
 			onClick={onClose}
 		>
-			<motion.div
-				className='workmodal__panel'
-				initial={{ scale: 0.95, y: 20 }}
-				animate={{ scale: 1, y: 0 }}
-				exit={{ scale: 0.95, y: 20 }}
-				transition={{ duration: 0.25 }}
+			<div
+				className='workmodal__panel reveal-scale'
 				onClick={(e) => e.stopPropagation()}
 			>
 				<button className='workmodal__close' onClick={onClose} aria-label='Close'>
@@ -141,8 +133,8 @@ const WorkModal = ({ work, onClose }) => {
 						</div>
 					)}
 				</div>
-			</motion.div>
-		</motion.div>
+			</div>
+		</div>
 	);
 };
 

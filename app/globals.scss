@@ -52,6 +52,39 @@
 	margin: 0;
 }
 
+/* ============================================================
+   Entrance animations — PURE CSS, visible by default.
+   Elements render at opacity:1 at rest; the keyframes only play a
+   fade/slide-in. If animations don't run for ANY reason (JS error,
+   old browser, reduced-motion, slow device) the content is STILL
+   visible. This replaces JS-driven (framer-motion) reveals so the
+   site renders correctly on every browser / OS / device.
+   ============================================================ */
+@keyframes reveal-up {
+	from { opacity: 0; transform: translateY(28px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes reveal-scale {
+	from { opacity: 0; transform: scale(0.94); }
+	to   { opacity: 1; transform: scale(1); }
+}
+@keyframes reveal-fade {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+.reveal       { animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal-scale { animation: reveal-scale 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.reveal-fade  { animation: reveal-fade 0.5s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal,
+	.reveal-scale,
+	.reveal-fade {
+		animation: none !important;
+	}
+}
+
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: 80px; /* offset sticky navbar on anchor jumps */

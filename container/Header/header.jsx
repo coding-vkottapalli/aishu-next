@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
 import { FiArrowDown, FiDownload } from 'react-icons/fi';
 import { images } from '../../constants';
 import './header.scss';
@@ -19,12 +18,7 @@ const Header = () => {
 			<div className='hero__glow' aria-hidden='true' />
 
 			<div className='hero__inner'>
-				<motion.div
-					className='hero__content'
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.7, ease: 'easeOut' }}
-				>
+				<div className='hero__content reveal'>
 					<span className='eyebrow'>
 						Senior 3D Environment &amp; Asset Artist · Whitby, ON
 					</span>
@@ -74,23 +68,16 @@ const Header = () => {
 							</div>
 						))}
 					</dl>
-				</motion.div>
+				</div>
 
-				<motion.div
-					className='hero__visual'
-					initial={{ opacity: 0, scale: 0.9 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
-				>
-					<motion.img
+				<div className='hero__visual reveal-scale' style={{ animationDelay: '0.15s' }}>
+					<img
 						src={images.chameleon}
 						alt='Stylized 3D chameleon character render by Aishwarya Pearala, Senior 3D Environment & Asset Artist in Toronto'
 						className='hero__subject'
-						animate={{ y: [0, -18, 0] }}
-						transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
 					/>
 					<div className='hero__visual-ring' aria-hidden='true' />
-				</motion.div>
+				</div>
 			</div>
 
 			<a href='#work' className='hero__scroll' aria-label='Scroll to work'>

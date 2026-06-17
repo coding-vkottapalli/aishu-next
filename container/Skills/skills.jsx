@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
 import { skillsData } from './skills-data';
 import './skills.scss';
 
@@ -20,12 +19,10 @@ const Skills = () => {
 
 			<div className='skills__grid'>
 				{skillsData.map((item, i) => (
-					<motion.div
+					<div
 						key={item.heading}
-						className='skills__card'
-						initial={{ opacity: 0, y: 24 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, delay: i * 0.05 }}
+						className='skills__card reveal'
+						style={{ animationDelay: `${i * 0.05}s` }}
 					>
 						<div className='skills__card-head'>
 							<div className='skills__card-logo'>
@@ -40,7 +37,7 @@ const Skills = () => {
 								</span>
 							))}
 						</div>
-					</motion.div>
+					</div>
 				))}
 			</div>
 		</section>

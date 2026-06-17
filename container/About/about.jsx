@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
 import { abouts, accrd } from './about-data.js';
 import { images } from '../../constants';
 import './about.scss';
@@ -18,12 +17,7 @@ const About = () => {
 	return (
 		<section id='about' className='section about'>
 			<div className='about__top'>
-				<motion.div
-					className='about__intro'
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-				>
+				<div className='about__intro reveal'>
 					<span className='eyebrow'>About</span>
 					<h2 className='section-title'>
 						Turning ideas into <span>production-ready 3D</span>
@@ -61,14 +55,9 @@ const About = () => {
 							<span className='about__toolkit-value'>English · Hindi · Telugu</span>
 						</div>
 					</div>
-				</motion.div>
+				</div>
 
-				<motion.div
-					className='about__visual'
-					initial={{ opacity: 0, scale: 0.95 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 0.7 }}
-				>
+				<div className='about__visual reveal-scale' style={{ animationDelay: '0.1s' }}>
 					<div className='about__portrait'>
 						<img
 							src={images.headshot}
@@ -79,7 +68,7 @@ const About = () => {
 						“Art is not what you see, but what you make others see.”
 						<cite>— Edgar Degas</cite>
 					</blockquote>
-				</motion.div>
+				</div>
 			</div>
 
 			{/* What I do — disciplines as tags */}

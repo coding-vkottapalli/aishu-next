@@ -2,7 +2,6 @@
 import React, { useState, useMemo } from 'react';
 import { AiFillEye } from 'react-icons/ai';
 import { SiSketchfab } from 'react-icons/si';
-import { motion, AnimatePresence } from 'framer-motion';
 
 import WorkModal from './work-modal';
 import './work.scss';
@@ -47,19 +46,13 @@ const Work = () => {
 				))}
 			</div>
 
-			<motion.div layout className='work__grid'>
-				<AnimatePresence mode='popLayout'>
-					{filtered.map((work) => {
-						const has3D = Boolean(work.codeLink);
-						return (
-							<motion.article
-								layout
+			<div className='work__grid'>
+				{filtered.map((work) => {
+					const has3D = Boolean(work.codeLink);
+					return (
+							<article
 								key={work.title}
-								initial={{ opacity: 0, scale: 0.95 }}
-								animate={{ opacity: 1, scale: 1 }}
-								exit={{ opacity: 0, scale: 0.95 }}
-								transition={{ duration: 0.35 }}
-								className='work__card'
+								className='work__card reveal-scale'
 								onClick={() => setActiveWork(work)}
 							>
 								<div className='work__card-media'>
@@ -85,17 +78,14 @@ const Work = () => {
 									<h4>{work.title}</h4>
 									<span className='work__card-tag'>{work.tags[0]}</span>
 								</div>
-							</motion.article>
+							</article>
 						);
 					})}
-				</AnimatePresence>
-			</motion.div>
+			</div>
 
-			<AnimatePresence>
-				{activeWork && (
-					<WorkModal work={activeWork} onClose={() => setActiveWork(null)} />
-				)}
-			</AnimatePresence>
+			{activeWork && (
+				<WorkModal work={activeWork} onClose={() => setActiveWork(null)} />
+			)}
 		</section>
 	);
 };

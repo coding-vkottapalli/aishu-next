@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { FiDownload } from 'react-icons/fi';
-import { motion, AnimatePresence } from 'framer-motion';
 
 import { images } from '../../constants';
 import './navbar.scss';
@@ -54,42 +53,34 @@ const Navbar = () => {
 				</button>
 			</div>
 
-			<AnimatePresence>
-				{toggle && (
-					<motion.div
-						className='app__navbar-drawer'
-						initial={{ x: '100%' }}
-						animate={{ x: 0 }}
-						exit={{ x: '100%' }}
-						transition={{ duration: 0.4, ease: 'easeOut' }}
+			{toggle && (
+				<div className='app__navbar-drawer'>
+					<button
+						className='app__navbar-close'
+						aria-label='Close menu'
+						onClick={() => setToggle(false)}
 					>
-						<button
-							className='app__navbar-close'
-							aria-label='Close menu'
-							onClick={() => setToggle(false)}
-						>
-							<HiX />
-						</button>
-						<ul>
-							{links.map((item) => (
-								<li key={item}>
-									<a href={`#${item}`} onClick={() => setToggle(false)}>
-										{item}
-									</a>
-								</li>
-							))}
-						</ul>
-						<a
-							className='btn btn--primary'
-							href={pdf}
-							download='Aishwarya-Pearala-Resume.pdf'
-							onClick={() => setToggle(false)}
-						>
-							<FiDownload /> Download Resume
-						</a>
-					</motion.div>
-				)}
-			</AnimatePresence>
+						<HiX />
+					</button>
+					<ul>
+						{links.map((item) => (
+							<li key={item}>
+								<a href={`#${item}`} onClick={() => setToggle(false)}>
+									{item}
+								</a>
+							</li>
+						))}
+					</ul>
+					<a
+						className='btn btn--primary'
+						href={pdf}
+						download='Aishwarya-Pearala-Resume.pdf'
+						onClick={() => setToggle(false)}
+					>
+						<FiDownload /> Download Resume
+					</a>
+				</div>
+			)}
 		</nav>
 	);
 };
