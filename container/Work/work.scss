@@ -48,6 +48,12 @@
 		}
 	}
 
+	&__more {
+		display: flex;
+		justify-content: center;
+		margin-top: 2.5rem;
+	}
+
 	&__card {
 		position: relative;
 		background: var(--bg-elevated);

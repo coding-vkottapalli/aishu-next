@@ -134,6 +134,33 @@
 		font-style: italic;
 	}
 
+	&__tools {
+		&-label {
+			display: block;
+			font-size: 0.72rem;
+			font-weight: 600;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--text-faint);
+			margin-bottom: 0.6rem;
+		}
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
+	}
+
+	&__tool {
+		font-size: 0.8rem;
+		font-weight: 500;
+		color: var(--text);
+		background: var(--bg-elevated-2);
+		border: 1px solid var(--border-strong);
+		border-radius: 999px;
+		padding: 0.35rem 0.8rem;
+	}
+
 	&__actions {
 		display: flex;
 		flex-wrap: wrap;

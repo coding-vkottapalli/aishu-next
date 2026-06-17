@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { FiMail, FiMapPin, FiDownload, FiSend } from 'react-icons/fi';
 import { FaArtstation, FaLinkedinIn } from 'react-icons/fa';
+import { SiSketchfab } from 'react-icons/si';
 import './contact.scss';
 
 const pdf = '/assets/resume/resume.pdf';
@@ -13,6 +14,12 @@ const contactMethods = [
 		label: 'ArtStation',
 		value: 'artstation.com/aishpearala',
 		href: 'https://www.artstation.com/aishpearala',
+	},
+	{
+		icon: <SiSketchfab />,
+		label: 'Sketchfab',
+		value: 'sketchfab.com/aishpearala',
+		href: 'https://sketchfab.com/aishpearala',
 	},
 	{
 		icon: <FaLinkedinIn />,
@@ -72,7 +79,7 @@ const Contact = () => {
 						Let&apos;s build something <span>great together</span>
 					</h2>
 					<p className='section-intro'>
-						Looking for a 3D Environment &amp; Asset Artist for your next film,
+						Looking for a 3D Asset and Environment Artist for your next film,
 						game or AR/VR project? I&apos;d love to hear about it — drop me a
 						message and I&apos;ll get back to you shortly.
 					</p>
@@ -135,7 +142,7 @@ const Contact = () => {
 
 			<footer className='contact__footer'>
 				<span>© {new Date().getFullYear()} Aishwarya Pearala</span>
-				<span>3D Environment &amp; Asset Artist · Whitby, Ontario</span>
+				<span>3D Asset and Environment Artist · Whitby, Ontario</span>
 			</footer>
 		</section>
 	);

@@ -25,8 +25,8 @@ const About = () => {
 
 					<div className='about__bio'>
 						<p>
-							I&apos;m <strong>Aishwarya Pearala</strong>, a 3D Environment &amp;
-							Asset Artist based in Whitby, Ontario, with 8+ years crafting
+							I&apos;m <strong>Aishwarya Pearala</strong>, a 3D Asset and
+							Environment Artist based in Whitby, Ontario, with 8+ years crafting
 							high-quality assets for film, AR/VR and real-time interactive
 							media.
 						</p>
@@ -61,7 +61,7 @@ const About = () => {
 					<div className='about__portrait'>
 						<img
 							src={images.headshot}
-							alt='Aishwarya Pearala, 3D Environment & Asset Artist'
+							alt='Aishwarya Pearala, 3D Asset and Environment Artist'
 						/>
 					</div>
 					<blockquote className='about__quote'>

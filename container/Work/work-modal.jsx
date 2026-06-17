@@ -4,12 +4,25 @@ import { FiX, FiChevronLeft, FiChevronRight, FiExternalLink } from 'react-icons/
 import { SiSketchfab } from 'react-icons/si';
 import './work-modal.scss';
 
+// Pull "Software Used: Maya, ZBrush and Photoshop." → ['Maya','ZBrush','Photoshop']
+const parseSoftware = (text) => {
+	if (!text) return [];
+	const m = text.match(/software used:?\s*(.+)/i);
+	if (!m) return [];
+	return m[1]
+		.replace(/\.\s*$/, '')
+		.split(/,|\band\b/i)
+		.map((s) => s.trim())
+		.filter(Boolean);
+};
+
 const WorkModal = ({ work, onClose }) => {
 	const images = work.subImages?.length ? work.subImages : [work.imgURL];
 	const [index, setIndex] = useState(0);
 	const [show3D, setShow3D] = useState(false);
 
 	const has3D = Boolean(work.codeLink);
+	const software = parseSoftware(work.description2);
 	const lastIndex = images.length - 1;
 
 	const prev = () => setIndex((i) => (i === 0 ? lastIndex : i - 1));
@@ -93,8 +106,22 @@ const WorkModal = ({ work, onClose }) => {
 					</div>
 
 					<p className='workmodal__desc'>{work.description}</p>
-					{work.description2 && (
-						<p className='workmodal__meta'>{work.description2}</p>
+
+					{software.length > 0 ? (
+						<div className='workmodal__tools'>
+							<span className='workmodal__tools-label'>Software</span>
+							<div className='workmodal__tools-list'>
+								{software.map((t) => (
+									<span key={t} className='workmodal__tool'>
+										{t}
+									</span>
+								))}
+							</div>
+						</div>
+					) : (
+						work.description2 && (
+							<p className='workmodal__meta'>{work.description2}</p>
+						)
 					)}
 
 					<div className='workmodal__actions'>

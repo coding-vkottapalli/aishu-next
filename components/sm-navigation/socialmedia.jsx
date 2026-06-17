@@ -3,12 +3,18 @@ import React from 'react';
 import { BsLinkedin, BsInstagram } from 'react-icons/bs';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaArtstation } from 'react-icons/fa';
+import { SiSketchfab } from 'react-icons/si';
 
 const SocialMedia = () => (
 	<div className='app__social'>
 		<div>
-			<a href='https://www.artstation.com/aishpearala' target='_blank'>
+			<a href='https://www.artstation.com/aishpearala' target='_blank' rel='noreferrer' aria-label='ArtStation'>
 				<FaArtstation />
+			</a>
+		</div>
+		<div>
+			<a href='https://sketchfab.com/aishpearala' target='_blank' rel='noreferrer' aria-label='Sketchfab'>
+				<SiSketchfab />
 			</a>
 		</div>
 		<div>

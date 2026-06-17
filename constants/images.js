@@ -11,6 +11,7 @@ const images = {
 	profile: '/assets/Portfolio_image.jpg',
 	circle: '/assets/circle.svg',
 	logo: '/assets/aish-logo.png',
+	logo3: '/assets/logo3.png',
 
 	// Tools
 	tool2: '/assets/tools2.png',

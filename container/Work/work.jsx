@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useMemo } from 'react';
+import Image from 'next/image';
 import { AiFillEye } from 'react-icons/ai';
 import { SiSketchfab } from 'react-icons/si';
 
@@ -7,14 +8,27 @@ import WorkModal from './work-modal';
 import './work.scss';
 import { categories, workData } from './work-data';
 
+const FEATURED_COUNT = 9;
+
 const Work = () => {
 	const [activeFilter, setActiveFilter] = useState('All');
 	const [activeWork, setActiveWork] = useState(null);
+	const [showAll, setShowAll] = useState(false);
 
 	const filtered = useMemo(() => {
 		if (activeFilter === 'All') return workData;
 		return workData.filter((w) => w.tags.includes(activeFilter));
 	}, [activeFilter]);
+
+	// On the "All" view, lead with a curated set; other filters show everything.
+	const isCurated = activeFilter === 'All' && !showAll;
+	const visible = isCurated ? filtered.slice(0, FEATURED_COUNT) : filtered;
+	const hiddenCount = filtered.length - visible.length;
+
+	const handleFilter = (item) => {
+		setActiveFilter(item);
+		setShowAll(false);
+	};
 
 	return (
 		<section id='work' className='section work'>
@@ -39,7 +53,7 @@ const Work = () => {
 						className={`work__filter-pill ${
 							activeFilter === item ? 'is-active' : ''
 						}`}
-						onClick={() => setActiveFilter(item)}
+						onClick={() => handleFilter(item)}
 					>
 						{item}
 					</button>
@@ -47,7 +61,7 @@ const Work = () => {
 			</div>
 
 			<div className='work__grid'>
-				{filtered.map((work) => {
+				{visible.map((work) => {
 					const has3D = Boolean(work.codeLink);
 					return (
 							<article
@@ -56,10 +70,11 @@ const Work = () => {
 								onClick={() => setActiveWork(work)}
 							>
 								<div className='work__card-media'>
-									<img
+									<Image
 										src={work.imgURL}
 										alt={`${work.title} — ${work.tags[0]} 3D art by Aishwarya Pearala`}
-										loading='lazy'
+										fill
+										sizes='(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw'
 									/>
 									<div className='work__card-overlay'>
 										<div className='work__card-actions'>
@@ -82,6 +97,14 @@ const Work = () => {
 						);
 					})}
 			</div>
+
+			{hiddenCount > 0 && (
+				<div className='work__more'>
+					<button className='btn btn--ghost' onClick={() => setShowAll(true)}>
+						View all {filtered.length} projects
+					</button>
+				</div>
+			)}
 
 			{activeWork && (
 				<WorkModal work={activeWork} onClose={() => setActiveWork(null)} />

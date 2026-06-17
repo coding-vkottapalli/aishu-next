@@ -20,11 +20,27 @@ const Navbar = () => {
 		return () => window.removeEventListener('scroll', onScroll);
 	}, []);
 
+	// Lock body scroll + close on Escape while the mobile menu is open
+	useEffect(() => {
+		if (!toggle) return;
+		document.body.style.overflow = 'hidden';
+		const onKey = (e) => e.key === 'Escape' && setToggle(false);
+		window.addEventListener('keydown', onKey);
+		return () => {
+			document.body.style.overflow = '';
+			window.removeEventListener('keydown', onKey);
+		};
+	}, [toggle]);
+
 	return (
 		<nav className={`app__navbar ${scrolled ? 'app__navbar--scrolled' : ''}`}>
-			<a href='#home' className='app__navbar-logo'>
-				<img src={images.logo} alt='Aishwarya Pearala logo' />
-				<span className='app__navbar-name'>Aishwarya Pearala</span>
+			<a href='#home' className='app__navbar-logo' aria-label='Aishwarya Pearala — home'>
+				<img src={images.logo3} alt='Aishwarya Pearala logo' />
+			</a>
+
+			<a href='#contact' className='app__navbar-status' title='Open to GTA & remote roles'>
+				<span className='app__navbar-status-dot' aria-hidden='true' />
+				Open to work
 			</a>
 
 			<ul className='app__navbar-links'>
@@ -54,31 +70,39 @@ const Navbar = () => {
 			</div>
 
 			{toggle && (
-				<div className='app__navbar-drawer'>
-					<button
-						className='app__navbar-close'
-						aria-label='Close menu'
-						onClick={() => setToggle(false)}
+				<div
+					className='app__navbar-overlay'
+					onClick={() => setToggle(false)}
+				>
+					<div
+						className='app__navbar-drawer'
+						onClick={(e) => e.stopPropagation()}
 					>
-						<HiX />
-					</button>
-					<ul>
-						{links.map((item) => (
-							<li key={item}>
-								<a href={`#${item}`} onClick={() => setToggle(false)}>
-									{item}
-								</a>
-							</li>
-						))}
-					</ul>
-					<a
-						className='btn btn--primary'
-						href={pdf}
-						download='Aishwarya-Pearala-Resume.pdf'
-						onClick={() => setToggle(false)}
-					>
-						<FiDownload /> Download Resume
-					</a>
+						<button
+							className='app__navbar-close'
+							aria-label='Close menu'
+							onClick={() => setToggle(false)}
+						>
+							<HiX />
+						</button>
+						<ul>
+							{links.map((item) => (
+								<li key={item}>
+									<a href={`#${item}`} onClick={() => setToggle(false)}>
+										{item}
+									</a>
+								</li>
+							))}
+						</ul>
+						<a
+							className='btn btn--primary'
+							href={pdf}
+							download='Aishwarya-Pearala-Resume.pdf'
+							onClick={() => setToggle(false)}
+						>
+							<FiDownload /> Download Resume
+						</a>
+					</div>
 				</div>
 			)}
 		</nav>

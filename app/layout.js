@@ -9,9 +9,9 @@ export const metadata = {
 	metadataBase: new URL('https://aishwarya-pearala.com'),
 	// Basic
 	title:
-		'Aishwarya Pearala — Senior 3D Environment & Asset Artist | Toronto, Canada',
+		'Aishwarya Pearala — 3D Asset and Environment Artist | Toronto, Canada',
 	description:
-		'Senior 3D Environment & Asset Artist in the Greater Toronto Area. ZBrush, Maya, Unreal Engine, Substance Painter, Blender. Film credit: The Croods: A New Age (DreamWorks/Technicolor); ex-Amazon AR/VR. Open to GTA hybrid & remote Canada/US roles.',
+		'3D Asset and Environment Artist in the Greater Toronto Area. ZBrush, Maya, Unreal Engine, Substance Painter, Blender. Film credit: The Croods: A New Age (DreamWorks/Technicolor); ex-Amazon AR/VR. Open to GTA hybrid & remote Canada/US roles.',
 
 	keywords: [
 		'Aishwarya Pearala',
@@ -41,6 +41,19 @@ export const metadata = {
 		'The Croods A New Age',
 		'Amazon AR VR',
 		'3D artist portfolio',
+		// 3D Asset & Environment Artist (current role wording)
+		'3D Asset and Environment Artist',
+		'Senior 3D Asset and Environment Artist',
+		'3D Asset and Environment Artist Toronto',
+		'3D Asset and Environment Artist GTA',
+		'3D Asset and Environment Artist Ontario',
+		'3D Asset and Environment Artist Canada',
+		'3D Asset and Environment Artist remote',
+		'3D Asset Artist GTA',
+		'3D Asset Artist Canada',
+		'3D Asset Artist remote',
+		'Game Asset Artist Toronto',
+		'Film Asset Artist',
 	],
 
 	authors: [{ name: 'Aishwarya Pearala' }],
@@ -48,17 +61,17 @@ export const metadata = {
 	// Open Graph (Facebook, LinkedIn, WhatsApp previews)
 	openGraph: {
 		title:
-			'Aishwarya Pearala — Senior 3D Environment & Asset Artist | Toronto',
+			'Aishwarya Pearala — 3D Asset and Environment Artist | Toronto',
 		description:
-			'Senior 3D Environment & Asset Artist (GTA). ZBrush · Maya · Unreal · Substance. Film credit: The Croods: A New Age (DreamWorks/Technicolor); ex-Amazon AR/VR. Open to hybrid GTA & remote Canada/US roles.',
+			'3D Asset and Environment Artist (GTA). ZBrush · Maya · Unreal · Substance. Film credit: The Croods: A New Age (DreamWorks/Technicolor); ex-Amazon AR/VR. Open to hybrid GTA & remote Canada/US roles.',
 		url: 'https://aishwarya-pearala.com',
-		siteName: 'Aishwarya Pearala — 3D Environment & Asset Artist',
+		siteName: 'Aishwarya Pearala — 3D Asset and Environment Artist',
 		images: [
 			{
 				url: '/assets/3d-stylized/childhood_work3.png',
 				width: 1200,
 				height: 630,
-				alt: 'Stylized 3D environment diorama by Aishwarya Pearala, Senior 3D Environment & Asset Artist',
+				alt: 'Stylized 3D environment diorama by Aishwarya Pearala, 3D Asset and Environment Artist',
 			},
 		],
 		type: 'website',
@@ -69,9 +82,9 @@ export const metadata = {
 	twitter: {
 		card: 'summary_large_image',
 		title:
-			'Aishwarya Pearala — Senior 3D Environment & Asset Artist | Toronto',
+			'Aishwarya Pearala — 3D Asset and Environment Artist | Toronto',
 		description:
-			'Senior 3D Environment & Asset Artist (GTA). ZBrush · Maya · Unreal · Substance. Film credit: The Croods: A New Age (DreamWorks/Technicolor). Open to hybrid GTA & remote roles.',
+			'3D Asset and Environment Artist (GTA). ZBrush · Maya · Unreal · Substance. Film credit: The Croods: A New Age (DreamWorks/Technicolor). Open to hybrid GTA & remote roles.',
 		images: ['/assets/3d-stylized/childhood_work3.png'],
 	},
 	// Canonical

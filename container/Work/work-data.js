@@ -11,7 +11,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/7384b19db4de4044ab5b77ef62f39b9d/embed?autospin=1&autostart=1',
 		imgURL: images.antiqueTelephone,
-		tags: ['3D Reality', 'All', 'No-Eye'],
+		tags: ['3D Reality'],
 		subImages: [images.antiqueTelephone],
 	},
 	{
@@ -23,7 +23,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/c98137bd5bc64ece991c3e385441ce5b/embed?autospin=1&autostart=1',
 		imgURL: images.steampunk,
-		tags: ['3D Reality', 'All', 'No-Eye'],
+		tags: ['3D Reality'],
 		subImages: [images.steampunk],
 	},
 	{
@@ -36,7 +36,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/d3b99f06d23b40dea3253720fe6a5b9b/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.tribalman,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.tribalman],
 	},
 	{
@@ -49,7 +49,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/cd388150534d478fb816ea242dfb3c68/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.lantern,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.childhood],
 	},
 	{
@@ -63,7 +63,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/e9bd68378b5f475a8c2cc17c18c40a03/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.chameleon,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.chameleon],
 	},
 	{
@@ -76,7 +76,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/765727579c7947cbaa5c52c9211850d8/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.sloopy,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.sloopy],
 	},
 
@@ -90,7 +90,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/0b24d89844c14509afbbf08c90d184d4/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.chest,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.chest],
 	},
 	{
@@ -103,7 +103,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/0284b1b8e4f044de94021a36aa74054e/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.childhood,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.childhood],
 	},
 	{
@@ -116,7 +116,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/8734490ed21e47aca057c5eaec4f2b71/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.fairysHouse,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.fairysHouse],
 	},
 	{
@@ -129,7 +129,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/b343283717f04a03909e1aaae57eba7e/embed?autospin=1&autostart=1',
 		imgURL: images.yakult,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.yakult],
 	},
 	{
@@ -141,7 +141,7 @@ export const workData = [
 		codeLink:
 			'https://sketchfab.com/models/36b58e46f7b9468fac6a8e5215c3c76f/embed?autospin=1&autostart=1',
 		imgURL: images.keyChain,
-		tags: ['3D Stylized', 'All'],
+		tags: ['3D Stylized'],
 		subImages: [images.keyChain],
 	},
 	{
@@ -152,7 +152,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model01,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model01_1,
 			images.model01_2,
@@ -169,7 +169,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model02,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [images.model02_1],
 	},
 	{
@@ -180,7 +180,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model03,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [images.model03_1],
 	},
 	{
@@ -191,7 +191,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model04,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model04_1,
 			images.model04_2,
@@ -209,7 +209,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model05,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model05_1,
 			images.model05_2,
@@ -225,7 +225,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model06,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model06_1,
 			images.model06_2,
@@ -243,7 +243,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model07,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model07_1,
 			images.model07_2,
@@ -262,7 +262,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model08,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model08_1,
 			images.model08_2,
@@ -281,7 +281,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model09,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model09_1,
 			images.model09_2,
@@ -300,7 +300,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model10,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model10_1,
 			images.model10_2,
@@ -319,7 +319,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.model11,
-		tags: ['3D Reality', 'All'],
+		tags: ['3D Reality'],
 		subImages: [
 			images.model11_1,
 			images.model11_2,
@@ -338,7 +338,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.childpotrait,
-		tags: ['2D Art', 'All'],
+		tags: ['2D Art'],
 		subImages: [images.childpotrait],
 	},
 	// {
@@ -359,7 +359,7 @@ export const workData = [
 		projectLink: null,
 		codeLink: null,
 		imgURL: images.benny,
-		tags: ['2D Art', 'All'],
+		tags: ['2D Art'],
 		subImages: [images.benny],
 	},
 	// {

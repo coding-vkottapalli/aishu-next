@@ -20,7 +20,7 @@ const Header = () => {
 			<div className='hero__inner'>
 				<div className='hero__content reveal'>
 					<span className='eyebrow'>
-						Senior 3D Environment &amp; Asset Artist · Whitby, ON
+						3D Asset and Environment Artist · Whitby, ON
 					</span>
 
 					<h1 className='hero__title'>
@@ -73,7 +73,7 @@ const Header = () => {
 				<div className='hero__visual reveal-scale' style={{ animationDelay: '0.15s' }}>
 					<img
 						src={images.chameleon}
-						alt='Stylized 3D chameleon character render by Aishwarya Pearala, Senior 3D Environment & Asset Artist in Toronto'
+						alt='Stylized 3D chameleon character render by Aishwarya Pearala, 3D Asset and Environment Artist in Toronto'
 						className='hero__subject'
 					/>
 					<div className='hero__visual-ring' aria-hidden='true' />
