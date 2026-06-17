@@ -6,6 +6,12 @@
    ============================================================ */
 
 :root {
+	/* Tell the browser this site is intentionally dark and manages its own
+	   colors. This stops Chrome's "Auto Dark Mode for Web Contents" (which
+	   some users/recruiters have enabled) from force-recoloring the page and
+	   making images/renders look blacked-out. */
+	color-scheme: dark;
+
 	--font-display: 'Sora', sans-serif; /* headings */
 	--font-body: 'Inter', sans-serif; /* body */
 	--font-base: 'Inter', sans-serif; /* legacy alias */
@@ -258,41 +264,3 @@ img {
 	@media screen and (max-width: 900px) { display: none; }
 }
 
-/* ============================================================
-   ANIMATION SAFETY NET — content must be visible on EVERY machine.
-   A portfolio for recruiters cannot depend on JS animations running.
-   Framer Motion starts elements at opacity:0 (via `initial`); if the
-   animation never fires (reduced-motion settings, locked-down or older
-   browsers, JS disabled/blocked), those elements would stay invisible.
-   Below we force full visibility whenever motion is reduced or JS is off,
-   so the work is always seen. Animations remain a bonus on capable setups.
-   ============================================================ */
-
-/* If a visitor has "reduce motion" enabled (common on corporate machines),
-   reveal everything instantly — never leave content stuck transparent. */
-@media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.001ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.001ms !important;
-		scroll-behavior: auto !important;
-	}
-	/* Framer Motion sets inline opacity/transform via `initial` — override it
-	   so reduced-motion users see the final, visible state. */
-	[style*='opacity: 0'],
-	[style*='opacity:0'] {
-		opacity: 1 !important;
-		transform: none !important;
-	}
-}
-
-/* If JavaScript never runs, Framer Motion can't reveal anything.
-   The app sets a `js-loaded` flag once mounted; until then, force any
-   motion-hidden element visible so the page is readable without JS. */
-html:not(.js-ready) [style*='opacity: 0'],
-html:not(.js-ready) [style*='opacity:0'] {
-	opacity: 1 !important;
-	transform: none !important;
-}

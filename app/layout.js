@@ -1,3 +1,10 @@
+// Declare the site as dark so browsers (incl. Chrome's Auto Dark Mode) don't
+// force-recolor it and black out the images. Renders <meta name="color-scheme">.
+export const viewport = {
+	colorScheme: 'dark',
+	themeColor: '#0b0c0f',
+};
+
 export const metadata = {
 	metadataBase: new URL('https://aishwarya-pearala.com'),
 	// Basic
@@ -92,17 +99,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en' suppressHydrationWarning>
-			<head>
-				{/* Mark JS as ready ASAP so the CSS "no-JS" safety net (which forces
-				    motion-hidden content visible) only applies when JS truly isn't
-				    running. Runs before paint to avoid any flash. */}
-				<script
-					dangerouslySetInnerHTML={{
-						__html: "document.documentElement.classList.add('js-ready');",
-					}}
-				/>
-			</head>
+		<html lang='en'>
 			<body>{children}</body>
 		</html>
 	);
