@@ -24,8 +24,7 @@ const Skills = () => {
 						key={item.heading}
 						className='skills__card'
 						initial={{ opacity: 0, y: 24 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: i * 0.05 }}
 					>
 						<div className='skills__card-head'>
