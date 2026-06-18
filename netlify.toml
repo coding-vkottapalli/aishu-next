@@ -5,3 +5,5 @@
 [build.environment]
   # Next.js 16 requires Node 20+
   NODE_VERSION = "20"
+  # @testing-library/react@13 peer-deps don't allow React 19; relax resolution
+  NPM_FLAGS = "--legacy-peer-deps"
