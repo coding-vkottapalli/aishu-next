@@ -141,6 +141,14 @@ const images = {
 	model11_5: '/assets/3d-reality/subimages/suitcase/sc-05.jpg',
 	model11_6: '/assets/3d-reality/subimages/suitcase/sc-06.jpg',
 
+	// Process breakdowns (Wireframe → MatCap+Surface → Final)
+	telephoneBd1: '/assets/telephone-breakdown/telephone-1.png',
+	telephoneBd2: '/assets/telephone-breakdown/telephone-2.png',
+	telephoneBd3: '/assets/telephone-breakdown/telephone-3.png',
+	lanternBd1: '/assets/lantern-breakdown/lantern-1.png',
+	lanternBd2: '/assets/lantern-breakdown/lantern-2.png',
+	lanternBd3: '/assets/lantern-breakdown/lantern-3.png',
+
 	// Social Media Icons
 	artstation: '/assets/artstation.png',
 };

@@ -50,10 +50,10 @@ export const workData = [
 			'https://sketchfab.com/models/cd388150534d478fb816ea242dfb3c68/embed?autospin=1&autostart=1&preload=1',
 		imgURL: images.lantern,
 		tags: ['3D Stylized'],
-		subImages: [images.childhood],
+		subImages: [images.lantern],
 	},
 	{
-		title: 'Chamaleon Having Coffee',
+		title: 'Chameleon Having Coffee',
 		description:
 			'Here’s a Chameleon having coffee after a very long stressful day, click on the image to view the 3D model and enjoy.',
 		description2:
@@ -83,7 +83,7 @@ export const workData = [
 	{
 		title: 'Chest Concept',
 		description:
-			"This 3D model of a chest is a beautiful and stylized representation of a gameing chest. The chest is made of wood and has a metal lock. The chest is decorated with intricate carvings and patterns. The 3D model is very detailed and captures the chest's physical features with great accuracy.",
+			"This 3D model of a chest is a beautiful and stylized representation of a gaming chest. The chest is made of wood and has a metal lock. The chest is decorated with intricate carvings and patterns. The 3D model is very detailed and captures the chest's physical features with great accuracy.",
 		description2:
 			'Software Used: Autodesk Maya, Z-Brush, Substance painter, Photoshop.',
 		projectLink: '',
@@ -184,9 +184,9 @@ export const workData = [
 		subImages: [images.model03_1],
 	},
 	{
-		title: 'Trolly Stand',
+		title: 'Trolley Stand',
 		description:
-			'Realistic trolly stand made in 3D for Amazon AR and VR experience project.',
+			'Realistic trolley stand made in 3D for Amazon AR and VR experience project.',
 		description2: 'Software Used: Autodesk Maya, Substance painter, Photoshop.',
 		projectLink: null,
 		codeLink: null,

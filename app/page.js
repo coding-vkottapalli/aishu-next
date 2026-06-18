@@ -1,5 +1,5 @@
 import './globals.scss';
-import { About, Header, Contact, Skills, Work } from '../container';
+import { About, Header, Contact, Skills, Work, Process } from '../container';
 import { Navbar } from '../components';
 import { SideRails } from '../components/sm-navigation';
 
@@ -80,6 +80,7 @@ export default function Home() {
 				<main>
 					<Header />
 					<Work />
+					<Process />
 					<About />
 					<Skills />
 					<Contact />
